@@ -19,5 +19,6 @@ class Paddle(posX: Int, posY: Int) : Entity {
         g2d.fillRect(paddPosX,paddPosY -(dimHeight/2), dimWidth, dimHeight)
     }
     override fun update() {
+        paddPosY = Game.userMousePosY
     }
 }

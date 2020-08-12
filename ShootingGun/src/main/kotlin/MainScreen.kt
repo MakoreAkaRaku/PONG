@@ -1,8 +1,6 @@
 import java.awt.Dimension
 import javax.swing.JFrame
-import javax.swing.JPanel
 import javax.swing.WindowConstants
-import java.awt.Graphics
 import java.awt.event.MouseEvent
 import java.awt.event.MouseMotionListener
 import java.awt.Color
@@ -10,7 +8,6 @@ import java.awt.Color
 
 const val WIDTH = 1920
 const val HEIGHT = 1080
-var userPaddle: Paddle = Paddle(0,0)
 /**
  * Main function, where the game initialises.
  */
@@ -19,7 +16,7 @@ object Game {
 
     const val bigDelay: Long = 1000L
     const val gameDelay: Long = 1000L / 60
-
+    var userMousePosY: Int  = 0
     lateinit var entities: List<Entity>
 
     fun init(entities: List<Entity>) {
@@ -47,9 +44,9 @@ object Game {
 
 fun main() {
     val entities = listOf(
-        Ball2D(WIDTH, HEIGHT),
-        userPaddle,
-        Paddle(WIDTH -25, HEIGHT/2)
+            Ball2D(WIDTH, HEIGHT),
+            Paddle(0,HEIGHT/2),
+            Paddle(WIDTH -25, HEIGHT/2)
     )
 
     val ballPanel = GameFrame(WIDTH, HEIGHT, entities)
@@ -81,8 +78,7 @@ class MainScreen(
     }
 
     override fun mouseMoved(p0: MouseEvent) {
-        println("Current location of mouse: (" + p0.x +","+ p0.y +")")
-        userPaddle.paddPosY = p0.y
+        Game.userMousePosY = p0.y
     }
     override fun mouseDragged(p0: MouseEvent?) = Unit
 }

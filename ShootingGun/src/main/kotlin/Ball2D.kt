@@ -1,30 +1,31 @@
 import java.awt.BasicStroke
 import java.awt.Color
 import java.awt.Graphics2D
-import java.util.Random
+import kotlin.properties.Delegates
+import kotlin.random.Random
 
 const val BASE_SPEED_PX = 10
 const val BASE_ACCEL_PX = 5
 const val MAX_SPEED_PX = 45
+const val DIAMETER = 40
+
 class Ball2D(val screenWidth: Int, val screenHeight: Int) : Entity {
 
-    var currentSpeed = BASE_SPEED_PX
-    var position : Vector2D
-    var direction: Vector2D
-    private val diameter: Int = 40
+
+    var currentSpeed by Delegates.notNull<Int>()
+    lateinit var position : Vector2D
+    lateinit var direction: Vector2D
 
     init {
-        position = Vector2D(screenWidth/2.toDouble(), screenHeight/2.toDouble())
-        val directTemp = Vector2D(Random().nextInt(screenWidth).toDouble(),Random().nextInt(screenHeight).toDouble())
-        direction = directTemp.toVectorUnitario()
+        initialConfig()
     }
 
     override fun paint(g2d: Graphics2D) {
         g2d.apply {
             stroke = BasicStroke(2F)
-            drawOval((position.posX - (diameter/2)).toInt(), (position.posY -(diameter/2)).toInt(),diameter,diameter)
+            drawOval((position.posX - (DIAMETER/2)).toInt(), (position.posY -(DIAMETER/2)).toInt(),DIAMETER,DIAMETER)
             color = Color.RED
-            fillOval((position.posX - (diameter/2)).toInt(), (position.posY -(diameter/2)).toInt(),diameter,diameter)
+            fillOval((position.posX - (DIAMETER/2)).toInt(), (position.posY -(DIAMETER/2)).toInt(),DIAMETER,DIAMETER)
         }
     }
     override fun update() {
@@ -38,10 +39,10 @@ class Ball2D(val screenWidth: Int, val screenHeight: Int) : Entity {
     }
 
     private fun checkForCollisions() {
-        val collidesWithBottom = (position.posY + diameter/2) >= screenHeight
-        val collidesWithTop = (position.posY + diameter/2) <= 0
-        val collidesWithLeft = (position.posX + diameter/2) <= 0
-        val collidesWithRight = (position.posX + diameter/2) >= screenWidth
+        val collidesWithBottom = (position.posY + DIAMETER/2) >= screenHeight
+        val collidesWithTop = (position.posY + DIAMETER/2) <= 0
+        val collidesWithLeft = (position.posX + DIAMETER/2) <= 0
+        val collidesWithRight = (position.posX + DIAMETER/2) >= screenWidth
 
         when {
             collidesWithBottom || collidesWithTop -> {
@@ -60,5 +61,20 @@ class Ball2D(val screenWidth: Int, val screenHeight: Int) : Entity {
                 }
             }
         }
+    }
+    fun reset(){
+        initialConfig()
+    }
+    private fun initialConfig(){
+        currentSpeed  = BASE_SPEED_PX
+        position = Vector2D(screenWidth/2.toDouble(), screenHeight/2.toDouble())
+        val directTemp = Vector2D(Random.nextInt(screenWidth).toDouble(),Random.nextInt(screenHeight).toDouble())
+        direction =
+                directTemp
+                        .toVectorUnitario()
+                        .let {
+                            if(Random.nextBoolean()) it.copy(posX = -it.posX) else it
+                        }
+
     }
 }

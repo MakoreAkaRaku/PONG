@@ -30,6 +30,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
@@ -102,26 +109,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597230035321" />
+    <state x="751" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1597617770724">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="751" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1597617770724" />
     <state x="689" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1597230022580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597230022580" />
-    <state width="1876" height="277" key="GridCell.Tab.0.bottom" timestamp="1597253700017">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1602244381995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597253700017" />
-    <state width="1876" height="277" key="GridCell.Tab.0.center" timestamp="1597253700017">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602244381995" />
+    <state width="1876" height="277" key="GridCell.Tab.0.bottom" timestamp="1597668913317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597253700017" />
-    <state width="1876" height="277" key="GridCell.Tab.0.left" timestamp="1597253700017">
+    <state width="1876" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597668913317" />
+    <state width="1876" height="277" key="GridCell.Tab.0.center" timestamp="1597668913317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597253700017" />
-    <state width="1876" height="277" key="GridCell.Tab.0.right" timestamp="1597253700017">
+    <state width="1876" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597668913317" />
+    <state width="1876" height="277" key="GridCell.Tab.0.left" timestamp="1597668913317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597253700017" />
+    <state width="1876" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597668913317" />
+    <state width="1876" height="277" key="GridCell.Tab.0.right" timestamp="1597668913317">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597668913317" />
     <state x="540" y="262" key="IDE.errors.dialog" timestamp="1597229818661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -130,5 +145,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597229437524" />
+    <state x="342" y="139" key="new project wizard" timestamp="1602244399979">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="139" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1602244399979" />
   </component>
 </project>

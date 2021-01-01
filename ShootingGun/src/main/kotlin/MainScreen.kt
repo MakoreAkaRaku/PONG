@@ -1,9 +1,13 @@
+import Game.ball
 import java.awt.Dimension
 import javax.swing.JFrame
 import javax.swing.WindowConstants
 import java.awt.event.MouseEvent
 import java.awt.event.MouseMotionListener
 import java.awt.Color
+import java.awt.event.FocusEvent
+import java.awt.event.FocusListener
+import kotlin.random.Random
 
 
 const val WIDTH = 1920
@@ -17,8 +21,8 @@ object Game {
     const val bigDelay: Long = 1000L
     const val gameDelay: Long = 1000L / 60
     var userMousePosY: Int  = 0
+    var ball: Ball2D = Ball2D(WIDTH,HEIGHT)
     lateinit var entities: List<Entity>
-
     fun init(entities: List<Entity>) {
         this.entities = entities
     }
@@ -40,13 +44,20 @@ object Game {
         }
 
     }
+    fun restart(){
+        ball.reset()
+
+    }
 }
 
 fun main() {
+
+
     val entities = listOf(
-            Ball2D(WIDTH, HEIGHT),
+            ball,
             Paddle(0,HEIGHT/2),
-            Paddle(WIDTH -25, HEIGHT/2)
+            Paddle(WIDTH -25, HEIGHT/2),
+            Marker(WIDTH)
     )
 
     val ballPanel = GameFrame(WIDTH, HEIGHT, entities)
